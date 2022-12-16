@@ -1,22 +1,8 @@
 #include "phonebook.class.hpp"
 #include "Contact.class.hpp"
 #include <iostream>
+#include <iomanip>
 #include <string>
-
-std::string	resizeaff(std::string str)
-{
-	if (str.length() < 10)
-	{
-		while (str.length() < 10)
-			str.append(" ");
-	}
-	else if (str.length() > 10)
-	{
-		str.resize(10);
-		str[9] = '.';
-	}
-	return (str);
-}
 
 void	affcontact(Contact contact)
 {
@@ -37,23 +23,23 @@ void	search(phonebook *phone)
 	int	index;
 
 	std::cout << "Contact enregistre" << std::endl;
-	std::cout << "  Index   |first name|last name |nickname" << std::endl;
+	std::cout << "  Index   |first name| last name|nickname" << std::endl;
 	if (phone->getcontact(0).getfname().empty() == false)
-		std::cout << "    0     |" << resizeaff(phone->getcontact(0).getfname()) << "|" << resizeaff(phone->getcontact(0).getlname()) << "|" << resizeaff(phone->getcontact(0).getnname()) << std::endl;
+		std::cout << "    0     |" << std::setw(10) << phone->getcontact(0).getfname() << "|" << std::setw(10) << phone->getcontact(0).getlname() << "|" << std::setw(10) << phone->getcontact(0).getnname() << std::endl;
 	if (phone->getcontact(1).getfname().empty() == false)
-		std::cout << "    1     |" << resizeaff(phone->getcontact(1).getfname()) << "|" << resizeaff(phone->getcontact(1).getlname()) << "|" << resizeaff(phone->getcontact(1).getnname()) << std::endl;
+		std::cout << "    1     |" << std::setw(10) << phone->getcontact(1).getfname() << "|" << std::setw(10) << phone->getcontact(1).getlname() << "|" << std::setw(10) << phone->getcontact(1).getnname() << std::endl;
 	if (phone->getcontact(2).getfname().empty() == false)
-		std::cout << "    2     |" << resizeaff(phone->getcontact(2).getfname()) << "|" << resizeaff(phone->getcontact(2).getlname()) << "|" << resizeaff(phone->getcontact(2).getnname()) << std::endl;
+		std::cout << "    2     |" << std::setw(10) << phone->getcontact(2).getfname() << "|" << std::setw(10) << phone->getcontact(2).getlname() << "|" << std::setw(10) << phone->getcontact(2).getnname() << std::endl;
 	if (phone->getcontact(3).getfname().empty() == false)
-		std::cout << "    3     |" << resizeaff(phone->getcontact(3).getfname()) << "|" << resizeaff(phone->getcontact(3).getlname()) << "|" << resizeaff(phone->getcontact(3).getnname()) << std::endl;
+		std::cout << "    3     |" << std::setw(10) << phone->getcontact(3).getfname() << "|" << std::setw(10) << phone->getcontact(3).getlname() << "|" << std::setw(10) << phone->getcontact(3).getnname() << std::endl;
 	if (phone->getcontact(4).getfname().empty() == false)
-		std::cout << "    4     |" << resizeaff(phone->getcontact(4).getfname()) << "|" << resizeaff(phone->getcontact(4).getlname()) << "|" << resizeaff(phone->getcontact(4).getnname()) << std::endl;
+		std::cout << "    4     |" << std::setw(10) << phone->getcontact(4).getfname() << "|" << std::setw(10) << phone->getcontact(4).getlname() << "|" << std::setw(10) << phone->getcontact(4).getnname() << std::endl;
 	if (phone->getcontact(5).getfname().empty() == false)
-		std::cout << "    5     |" << resizeaff(phone->getcontact(5).getfname()) << "|" << resizeaff(phone->getcontact(5).getlname()) << "|" << resizeaff(phone->getcontact(5).getnname()) << std::endl;
+		std::cout << "    5     |" << std::setw(10) << phone->getcontact(5).getfname() << "|" << std::setw(10) << phone->getcontact(5).getlname() << "|" << std::setw(10) << phone->getcontact(5).getnname() << std::endl;
 	if (phone->getcontact(6).getfname().empty() == false)
-		std::cout << "    6     |" << resizeaff(phone->getcontact(6).getfname()) << "|" << resizeaff(phone->getcontact(6).getlname()) << "|" << resizeaff(phone->getcontact(6).getnname()) << std::endl;
+		std::cout << "    6     |" << std::setw(10) << phone->getcontact(6).getfname() << "|" << std::setw(10) << phone->getcontact(6).getlname() << "|" << std::setw(10) << phone->getcontact(6).getnname() << std::endl;
 	if (phone->getcontact(7).getfname().empty() == false)
-		std::cout << "    7     |" << resizeaff(phone->getcontact(7).getfname()) << "|" << resizeaff(phone->getcontact(7).getlname()) << "|" << resizeaff(phone->getcontact(7).getnname()) << std::endl;
+		std::cout << "    7     |" << std::setw(10) << phone->getcontact(7).getfname() << "|" << std::setw(10) << phone->getcontact(7).getlname() << "|" << std::setw(10) << phone->getcontact(7).getnname() << std::endl;
 	std::cout << "Index du contact a affiche : ";
 	std::cin >> index;
 	std::cin.ignore();
