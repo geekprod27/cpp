@@ -43,6 +43,11 @@ void	search(phonebook *phone)
 	std::cout << "Index du contact a affiche : ";
 	std::cin >> index;
 	std::cin.ignore();
+	if (!std::cin.good())
+	{
+		std::cout << "Erreur !" << std::endl;
+		return ;
+	}
 	if (index < 0 || index > 7)
 	{
 		std::cout << "Index inconu" << std::endl;
@@ -111,6 +116,7 @@ int main() {
 
 	while(42) {
 		std::cout << "PhoneBook : ";
+		std::cin.clear();
 		getline(std::cin, cmd);
 		if (std::cin.eof())
 			break ;
@@ -120,6 +126,8 @@ int main() {
 			search(&phone);
 		else if (cmd.compare("EXIT") == 0)
 			break ;
+		std::cin.clear();
+		std::cin.ignore();
 	}
 	return (0);
 }
