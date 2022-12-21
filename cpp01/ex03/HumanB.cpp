@@ -10,6 +10,7 @@ HumanB::HumanB( std::string name, Weapon& wea ) {
 HumanB::HumanB( std::string name ) {
 	//std::cout << "constructor called HumanB" << std::endl;
 	this->name = name;
+	this->wea = NULL;
 	return ;
 }
 

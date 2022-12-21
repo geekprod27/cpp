@@ -1,14 +1,15 @@
-NAME = replace
+NAME = harl
 
-CC	= g++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
+CC	= c++
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 PROGRESS = 🔁
 CHECK = ✅
 
 all: $(NAME)
 
-SRC_NAME =		main.cpp
+SRC_NAME =		main.cpp		\
+				harl.cpp
 
 OBJ = $(SRC_NAME:.cpp=.o)
 
