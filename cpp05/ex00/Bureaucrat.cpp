@@ -8,10 +8,14 @@ Bureaucrat::Bureaucrat()
 {
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	this->_name = name;
-	this->_grade = grade;
+	if (grade < 0)
+		throw std::exception();
+	else if (grade > 150)
+		throw std::exception();
+	else
+		this->_grade = grade;
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat & src )
