@@ -5,6 +5,8 @@
 # include <string>
 # include <stdexcept>
 
+class Form;
+
 class Bureaucrat
 {
 
@@ -23,7 +25,7 @@ class Bureaucrat
 
 				virtual const char * what() const throw()
 				{
-					return ("Grade too high");
+					return ("Bureaucrat : Grade too high");
 				}
 		};
 		class GradeTooLowException : public std::exception
@@ -32,13 +34,15 @@ class Bureaucrat
 
 				virtual const char * what() const throw()
 				{
-					return ("Grade too low");
+					return ("Bureaucrat : Grade too low");
 				}
 		};
 
 		void			upgrade();
 		void			downgrade();
 
+		void			signForm(Form &fo);
+		void			executeForm(Form const & form);
 
 		std::string		getName() const;
 		int				getGrade() const;

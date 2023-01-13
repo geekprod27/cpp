@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -82,3 +83,17 @@ void	Bureaucrat::downgrade()
 
 
 /* ************************************************************************** */
+
+void			Bureaucrat::signForm(Form &fo)
+{
+	try
+	{
+		fo.beSigned(*this);
+		std::cout << this->getName() << " signed " << fo.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->getName() << " couldn’t sign " << fo.getName() << " because " << e.what() << std::endl;
+	}
+	
+}
