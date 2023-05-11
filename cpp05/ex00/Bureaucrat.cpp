@@ -4,8 +4,9 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : _name(" ")
 {
+	this->_grade = 150;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
