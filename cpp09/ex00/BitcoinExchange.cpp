@@ -87,17 +87,19 @@ void	BitcoinExchange::inputfile(char *input)
 			std::cout << "\033[31mFailed to read " << input << "\033[0m" << std::endl;
 			exit (1);
 		}
-		if (txt.empty() || txt == "date | value")
+		if (txt.empty())
 			continue;
 		date = txt;
 		if (date.find('|') != std::string::npos)
-		date.erase(date.find('|'));
+			date.erase(date.find('|'));
 		value = txt;
 		value.erase(0, value.find('|')+1);
 		std::map<std::string, std::string>::iterator it = _data.lower_bound(date);
 		it--;
 		if (date.find(' ') != std::string::npos)
 			date.erase(date.find(' '));
+		if (date == "date")
+			continue;
 		if (isvalidedate(date, &_data))
 		{
 			if (strtof(value.c_str(), NULL) > 0 && strtof(value.c_str(), NULL) < 1000)

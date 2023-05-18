@@ -3,13 +3,15 @@
 bool isvalidedate(std::string date, std::map<std::string, std::string> *data)
 {
 	int annee, mois, jour;
-	int anneedata;
+	int anneedata, moisdata, jourdata;
 	char sep;
 	std::istringstream strs(date);
 	std::istringstream strsdata(data->begin()->first);
 
 	strs >> annee >> sep >> mois >> sep >> jour;
-	strsdata >> anneedata;
+	strsdata >> anneedata >> sep >> moisdata >> sep >> jourdata;
+	if (anneedata == annee && (mois < moisdata || ( mois == moisdata && jour < jourdata)))
+		return (false);
 	if (annee < anneedata || mois < 1 || mois > 12 || jour < 1 || jour > 31)
 		return (false);
 	if (mois == 2)
