@@ -12,7 +12,7 @@ bool isvalidedate(std::string date, std::map<std::string, std::string> *data)
 	strsdata >> anneedata >> sep >> moisdata >> sep >> jourdata;
 	if (anneedata == annee && (mois < moisdata || ( mois == moisdata && jour < jourdata)))
 		return (false);
-	if (annee < anneedata || mois < 1 || mois > 12 || jour < 1 || jour > 31)
+	if (annee < anneedata || mois < 1 || mois > 12 || jour < 1 || jour > 31 || annee > 9999)
 		return (false);
 	if (mois == 2)
 	{

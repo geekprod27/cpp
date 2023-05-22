@@ -29,22 +29,20 @@ int main(int argc, char **argv)
 	std::vector<int> vec;
 	std::deque<int> deque;
 	init(&vec, &deque, argv);
-	std::cout << "Before vec: ";
+	clock_t start = clock();
+	std::cout << "Before: ";
 	for(size_t i=0; i < vec.size(); i++)
 				std::cout << vec[i] << " ";
 	std::cout << std::endl;
 	algo.sorting(vec);
-	std::cout << "After vec: ";
+	std::cout << "After: ";
 	for(size_t i=0; i < vec.size(); i++)
 				std::cout << vec[i] << " ";
-	std::cout << std::endl;
-	std::cout << "Before deque: ";
-	for(size_t i=0; i < deque.size(); i++)
-				std::cout << deque[i] << " ";
+	clock_t endvec = clock() - start;
+	clock_t startdeque = clock();
 	std::cout << std::endl;
 	algo.sorting(deque);
-	std::cout << "After deque: ";
-	for(size_t i=0; i < deque.size(); i++)
-				std::cout << deque[i] << " ";
-	std::cout << std::endl;
+	clock_t enddeque = clock() - startdeque;
+	std::cout << "Time to process a range of " << vec.size() << " elements with std::vector : " << ((float)endvec*1000)/CLOCKS_PER_SEC << " ms" <<std::endl;
+	std::cout << "Time to process a range of " << deque.size() << " elements with std::deque : " << ((float)enddeque*1000)/CLOCKS_PER_SEC << " ms" <<std::endl;
 }

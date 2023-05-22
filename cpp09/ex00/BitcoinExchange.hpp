@@ -23,6 +23,7 @@ class BitcoinExchange
 		void	inputfile(char *input);
 
 	private:
+		bool								validinput(std::string txt);
 		std::map<std::string, std::string> _data;
 
 };

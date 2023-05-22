@@ -8,7 +8,7 @@ CHECK = ✅
 
 all: $(NAME)
 
-SRC_NAME =		main.cpp	
+SRC_NAME =		main.cpp	PmergeMe.cpp
 
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 DEPS_NAME = $(SRC_NAME:.cpp=.d)

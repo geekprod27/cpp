@@ -2,10 +2,14 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
+#include <ctime>
 
 class PmergeMe
 {
 	public:
+		PmergeMe();
+		PmergeMe(PmergeMe const &src);
+		~PmergeMe();
 		template <class T>
 		void sorting(T &c)
 		{
